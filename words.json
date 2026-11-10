@@ -1,0 +1,658 @@
+[
+  {
+    "id": 1,
+    "word": "apple",
+    "phonetic": "[ˈæpl]",
+    "pos": "n.",
+    "meaning": "蘋果",
+    "grammar": "【可數名詞】單數前冠詞需用 an (an apple)。",
+    "examples": [
+      { "en": "An apple a day keeps the doctor away.", "zh": "一天一蘋果，醫師遠離我。" },
+      { "en": "She cut the red apple into four pieces.", "zh": "她把那顆紅蘋果切成了四塊。" }
+    ]
+  },
+  {
+    "id": 2,
+    "word": "banana",
+    "phonetic": "[bəˈnænə]",
+    "pos": "n.",
+    "meaning": "香蕉",
+    "grammar": "【可數名詞】複數形直接加 s (bananas)。",
+    "examples": [
+      { "en": "Monkeys love to eat yellow bananas.", "zh": "猴子非常喜歡吃黃香蕉。" }
+    ]
+  },
+  {
+    "id": 3,
+    "word": "eat",
+    "phonetic": "[it]",
+    "pos": "v.",
+    "meaning": "吃",
+    "grammar": "【不規則動詞】三態變化為 eat - ate - eaten。",
+    "examples": [
+      { "en": "We usually eat dinner together at six o'clock.", "zh": "我們通常在六點一起吃晚餐。" }
+    ]
+  },
+  {
+    "id": 4,
+    "word": "drink",
+    "phonetic": "[drɪŋk]",
+    "pos": "v.",
+    "meaning": "喝",
+    "grammar": "【不規則動詞】三態變化為 drink - drank - drunk。",
+    "examples": [
+      { "en": "Don't forget to drink enough water every day.", "zh": "別忘了每天喝足夠的水。" }
+    ]
+  },
+  {
+    "id": 5,
+    "word": "happy",
+    "phonetic": "[ˈhæpɪ]",
+    "pos": "adj.",
+    "meaning": "快樂的",
+    "grammar": "【形容詞比較級】字尾 y 改 i 加 er (happier / happiest)。常見搭配 be happy with...",
+    "examples": [
+      { "en": "The children were very happy to hear the good news.", "zh": "孩子們聽到這個好消息感到非常快樂。" }
+    ]
+  },
+  {
+    "id": 6,
+    "word": "accept",
+    "phonetic": "[əkˈsɛpt]",
+    "pos": "v.",
+    "meaning": "接受",
+    "grammar": "【規則動詞】過去式加 ed。常見搭配 accept an invitation (接受邀請)。",
+    "examples": [
+      { "en": "She decided to accept the new job offer.", "zh": "她決定接受這份新工作。" },
+      { "en": "He accepted my apology with a warm smile.", "zh": "他帶著溫暖的微笑接受了我的道歉。" }
+    ]
+  },
+  {
+    "id": 7,
+    "word": "agree",
+    "phonetic": "[əˈɡri]",
+    "pos": "v.",
+    "meaning": "同意",
+    "grammar": "【動詞用法】常搭配介系詞 with (同意某人) 或 to (同意計劃)。",
+    "examples": [
+      { "en": "I completely agree with your opinion.", "zh": "我完全同意你的觀點。" },
+      { "en": "They agreed to start the project next week.", "zh": "他們同意下週開始這個計畫。" }
+    ]
+  },
+  {
+    "id": 8,
+    "word": "allow",
+    "phonetic": "[əˈlaʊ]",
+    "pos": "v.",
+    "meaning": "允許",
+    "grammar": "【重要句型】allow someone to do something (允許某人做某事)。",
+    "examples": [
+      { "en": "My parents don't allow me to stay out late.", "zh": "我的父母不允許我在外面待太晚。" },
+      { "en": "Pets are not allowed inside this restaurant.", "zh": "這間餐廳內不允許攜帶寵物。" }
+    ]
+  },
+  {
+    "id": 9,
+    "word": "answer",
+    "phonetic": "[ˈænsɚ]",
+    "pos": "v./n.",
+    "meaning": "回答；答案",
+    "grammar": "【動名同形】作為動詞時直接加受詞 (answer the question)。",
+    "examples": [
+      { "en": "Please answer the phone when it rings.", "zh": "電話響時請接電話。" },
+      { "en": "Do you know the correct answer to this test?", "zh": "你知道這次測驗的正確答案嗎？" }
+    ]
+  },
+  {
+    "id": 10,
+    "word": "appear",
+    "phonetic": "[əˈpɪr]",
+    "pos": "v.",
+    "meaning": "出現；似乎",
+    "grammar": "【連綴動詞】後接形容詞，例如 appear happy (似乎很開心)。",
+    "examples": [
+      { "en": "A rainbow appeared in the sky after the rain.", "zh": "雨後天空出現了一道彩虹。" },
+      { "en": "He appears to be very tired today.", "zh": "他今天看起來似乎非常疲倦。" }
+    ]
+  },
+  {
+    "id": 11,
+    "word": "arrive",
+    "phonetic": "[əˈraɪv]",
+    "pos": "v.",
+    "meaning": "到達",
+    "grammar": "【不及物動詞】小地點搭配 at (arrive at school)，小鎮或國家搭配 in (arrive in Japan)。",
+    "examples": [
+      { "en": "The train will arrive at the station soon.", "zh": "火車很快就會到達車站。" },
+      { "en": "We arrived in Taipei early this morning.", "zh": "我們今天一大早抵達台北。" }
+    ]
+  },
+  {
+    "id": 12,
+    "word": "become",
+    "phonetic": "[bɪˈkʌm]",
+    "pos": "v.",
+    "meaning": "變成；成為",
+    "grammar": "【不規則動詞】三態為 become - became - become。",
+    "examples": [
+      { "en": "She wants to become a famous singer.", "zh": "她想成為一名著名的歌手。" },
+      { "en": "The weather became cold in November.", "zh": "天氣在十一月變得寒冷。" }
+    ]
+  },
+  {
+    "id": 13,
+    "word": "begin",
+    "phonetic": "[bɪˈɡɪn]",
+    "pos": "v.",
+    "meaning": "開始",
+    "grammar": "【不規則動詞】三態為 begin - began - begun。後接 to V 或 V-ing。",
+    "examples": [
+      { "en": "Class will begin in five minutes.", "zh": "課堂將在五分鐘後開始。" },
+      { "en": "It began to rain heavily last night.", "zh": "昨晚開始下起大雨。" }
+    ]
+  },
+  {
+    "id": 14,
+    "word": "believe",
+    "phonetic": "[bɪˈliv]",
+    "pos": "v.",
+    "meaning": "相信",
+    "grammar": "【搭配字詞】believe in someone (信任/信仰某人)。",
+    "examples": [
+      { "en": "I believe you can pass the English exam.", "zh": "我相信你能通過這場英文考試。" },
+      { "en": "Always believe in yourself.", "zh": "永遠要相信你自己。" }
+    ]
+  },
+  {
+    "id": 15,
+    "word": "borrow",
+    "phonetic": "[ˈbɑro]",
+    "pos": "v.",
+    "meaning": "借入",
+    "grammar": "【句型解析】borrow something from someone (向某人借某物)。對照 lend (借出)。",
+    "examples": [
+      { "en": "Can I borrow your pencil for a moment?", "zh": "我可以借用一下你的鉛筆嗎？" },
+      { "en": "He borrowed three books from the library.", "zh": "他從圖書館借了三本書。" }
+    ]
+  },
+  {
+    "id": 16,
+    "word": "bring",
+    "phonetic": "[brɪŋ]",
+    "pos": "v.",
+    "meaning": "帶來",
+    "grammar": "【不規則動詞】三態為 bring - brought - brought。",
+    "examples": [
+      { "en": "Don't forget to bring your umbrella today.", "zh": "今天別忘了帶你的雨傘。" },
+      { "en": "Please bring me a glass of water.", "zh": "請幫我拿一杯水來。" }
+    ]
+  },
+  {
+    "id": 17,
+    "word": "build",
+    "phonetic": "[bɪld]",
+    "pos": "v.",
+    "meaning": "建造",
+    "grammar": "【不規則動詞】三態為 build - built - built。",
+    "examples": [
+      { "en": "Workers are building a new bridge over the river.", "zh": "工人們正在這條河上建造一座新橋。" },
+      { "en": "The children built a sandcastle on the beach.", "zh": "孩子們在海灘上堆了一個沙堡。" }
+    ]
+  },
+  {
+    "id": 18,
+    "word": "change",
+    "phonetic": "[tʃendʒ]",
+    "pos": "v./n.",
+    "meaning": "改變；零錢",
+    "grammar": "【多義字】作名詞可表示「零錢」(不可數名詞)。",
+    "examples": [
+      { "en": "Leaves change color in the autumn.", "zh": "樹葉在秋天會改變顏色。" },
+      { "en": "Here is your change after paying the bill.", "zh": "這是結帳後找給你的零錢。" }
+    ]
+  },
+  {
+    "id": 19,
+    "word": "choose",
+    "phonetic": "[tʃuz]",
+    "pos": "v.",
+    "meaning": "選擇",
+    "grammar": "【不規則動詞】三態為 choose - chose - chosen。",
+    "examples": [
+      { "en": "You can choose your favorite flavor of ice cream.", "zh": "你可以選擇你最喜歡冰淇淋口味。" },
+      { "en": "She chose the red dress for the party.", "zh": "她選擇了紅色的洋裝參加派對。" }
+    ]
+  },
+  {
+    "id": 20,
+    "word": "climb",
+    "phonetic": "[klaɪm]",
+    "pos": "v.",
+    "meaning": "攀爬",
+    "grammar": "【發音注意】字尾 b 不發音。常見搭配 climb a mountain (登山)。",
+    "examples": [
+      { "en": "Monkeys can climb trees very quickly.", "zh": "猴子能非常快速地爬樹。" },
+      { "en": "We plan to climb Mount Jade next summer.", "zh": "我們計畫明年夏天去爬玉山。" }
+    ]
+  },
+  {
+    "id": 21,
+    "word": "collect",
+    "phonetic": "[kəˈlɛkt]",
+    "pos": "v.",
+    "meaning": "收集",
+    "grammar": "【名詞延伸】collection (收藏品)；collector (收集者)。",
+    "examples": [
+      { "en": "My brother likes to collect rare stamps.", "zh": "我哥哥喜歡收集稀有的郵票。" },
+      { "en": "The teacher collected our homework after class.", "zh": "老師下課後收集了我們的作業。" }
+    ]
+  },
+  {
+    "id": 22,
+    "word": "create",
+    "phonetic": "[kriˈet]",
+    "pos": "v.",
+    "meaning": "創造",
+    "grammar": "【形容詞延伸】creative (有創意的)；creativity (創造力)。",
+    "examples": [
+      { "en": "Artists create beautiful paintings.", "zh": "藝術家創作美麗的畫作。" },
+      { "en": "This new game created a lot of fun for kids.", "zh": "這款新遊戲為孩子們帶來許多樂趣。" }
+    ]
+  },
+  {
+    "id": 23,
+    "word": "decide",
+    "phonetic": "[dɪˈsaɪd]",
+    "pos": "v.",
+    "meaning": "決定",
+    "grammar": "【核心句型】decide to do something (決定做某事)。",
+    "examples": [
+      { "en": "They decided to travel to Japan this winter.", "zh": "他們決定今年冬天去日本旅遊。" },
+      { "en": "I cannot decide which book to buy.", "zh": "我無法決定要買哪一本書。" }
+    ]
+  },
+  {
+    "id": 24,
+    "word": "describe",
+    "phonetic": "[dɪˈskraɪb]",
+    "pos": "v.",
+    "meaning": "描述",
+    "grammar": "【名詞延伸】description (描述/形容)。",
+    "examples": [
+      { "en": "Can you describe what the suspect looked like?", "zh": "你能描述一下嫌疑犯長什麼樣子嗎？" },
+      { "en": "Words cannot describe how happy I feel right now.", "zh": "言語無法形容我現在有多開心。" }
+    ]
+  },
+  {
+    "id": 25,
+    "word": "discover",
+    "phonetic": "[dɪˈskʌvɚ]",
+    "pos": "v.",
+    "meaning": "發現",
+    "grammar": "【前綴解析】dis- (相反) + cover (覆蓋) = 揭開/發現。",
+    "examples": [
+      { "en": "Scientists discovered a new species in the rainforest.", "zh": "科學家在熱帶雨林中發現了一個新物種。" },
+      { "en": "She discovered a cozy coffee shop near her house.", "zh": "她在家附近發現了一間舒適的咖啡廳。" }
+    ]
+  },
+  {
+    "id": 26,
+    "word": "expect",
+    "phonetic": "[ɪkˈspɛkt]",
+    "pos": "v.",
+    "meaning": "期待；預料",
+    "grammar": "【核心句型】expect someone to do something (期待某人做某事)。",
+    "examples": [
+      { "en": "We expect to finish the project by Friday.", "zh": "我們預計在週五前完成這個專案。" },
+      { "en": "The teacher expects us to hand in homework on time.", "zh": "老師期望我們按時交作業。" }
+    ]
+  },
+  {
+    "id": 27,
+    "word": "explain",
+    "phonetic": "[ɪkˈsplen]",
+    "pos": "v.",
+    "meaning": "解釋",
+    "grammar": "【用法解析】explain something to someone (向某人解釋某事)。",
+    "examples": [
+      { "en": "The math teacher explained the problem carefully.", "zh": "數學老師仔細地解釋了這道題目。" },
+      { "en": "Let me explain why I was late for school today.", "zh": "讓我解釋一下今天為什麼上學遲到。" }
+    ]
+  },
+  {
+    "id": 28,
+    "word": "finish",
+    "phonetic": "[ˈfɪnɪʃ]",
+    "pos": "v.",
+    "meaning": "完成；結束",
+    "grammar": "【重要文法】後接動名詞 finish V-ing (完成做某事)。",
+    "examples": [
+      { "en": "I finished writing my essay last night.", "zh": "我昨晚完成了我的作文。" },
+      { "en": "Please finish your dinner before playing games.", "zh": "玩遊戲前請先吃完晚餐。" }
+    ]
+  },
+  {
+    "id": 29,
+    "word": "follow",
+    "phonetic": "[ˈfɑlo]",
+    "pos": "v.",
+    "meaning": "跟隨；遵守",
+    "grammar": "【常見搭配】follow the rules (遵守規則)；follow advice (聽從建議)。",
+    "examples": [
+      { "en": "The little ducklings followed their mother.", "zh": "小鴨子們跟在牠們媽媽後面。" },
+      { "en": "All students must follow the school rules.", "zh": "所有學生都必須遵守學校規定。" }
+    ]
+  },
+  {
+    "id": 30,
+    "word": "forget",
+    "phonetic": "[fɚˈɡɛt]",
+    "pos": "v.",
+    "meaning": "忘記",
+    "grammar": "【不規則動詞】forget to V (忘記要去做)；forget V-ing (忘記做過)。",
+    "examples": [
+      { "en": "Don't forget to lock the door when you leave.", "zh": "離開時別忘了鎖門。" },
+      { "en": "I will never forget visiting New York City.", "zh": "我永遠不會忘記去過紐約造訪的時光。" }
+    ]
+  },
+  {
+    "id": 31,
+    "word": "happen",
+    "phonetic": "[ˈhæpən]",
+    "pos": "v.",
+    "meaning": "發生",
+    "grammar": "【不及物動詞】無被動語態。常見句型 What happened? (發生什麼事？)。",
+    "examples": [
+      { "en": "The car accident happened near the corner.", "zh": "車禍發生在轉角附近。" },
+      { "en": "Tell me what happened during class today.", "zh": "告訴我今天課堂上發生了什麼事。" }
+    ]
+  },
+  {
+    "id": 32,
+    "word": "improve",
+    "phonetic": "[ɪmˈpruv]",
+    "pos": "v.",
+    "meaning": "改善；進步",
+    "grammar": "【名詞延伸】improvement (進步/改善)。",
+    "examples": [
+      { "en": "Practicing daily can improve your English skills.", "zh": "每天練習可以提升你的英文能力。" },
+      { "en": "Her grades improved a lot this semester.", "zh": "這學期她的成績進步了很多。" }
+    ]
+  },
+  {
+    "id": 33,
+    "word": "invite",
+    "phonetic": "[ɪnˈvaɪt]",
+    "pos": "v.",
+    "meaning": "邀請",
+    "grammar": "【常見句型】invite someone to a party (邀請某人參加派對)。",
+    "examples": [
+      { "en": "I invited all my classmates to my birthday party.", "zh": "我邀請了所有同學參加我的生日派對。" },
+      { "en": "Thank you for inviting us to dinner.", "zh": "謝謝你邀請我們共進晚餐。" }
+    ]
+  },
+  {
+    "id": 34,
+    "word": "learn",
+    "phonetic": "[lɝn]",
+    "pos": "v.",
+    "meaning": "學習",
+    "grammar": "【常見搭配】learn to V (學習做某事)；learn from mistakes (從錯誤中學習)。",
+    "examples": [
+      { "en": "Children learn foreign languages very quickly.", "zh": "孩子們學習外語速度非常快。" },
+      { "en": "We can always learn from our past mistakes.", "zh": "我們總能從過去的錯誤中學習。" }
+    ]
+  },
+  {
+    "id": 35,
+    "word": "listen",
+    "phonetic": "[ˈlɪsn]",
+    "pos": "v.",
+    "meaning": "傾聽",
+    "grammar": "【搭配介系詞】 listen to music / listen to the teacher (聽音樂/聽老師講話)。",
+    "examples": [
+      { "en": "Listen carefully to what the guide says.", "zh": "仔細聽導覽員說的話。" },
+      { "en": "She enjoys listening to classical music at home.", "zh": "她喜歡在家裡聽古典音樂。" }
+    ]
+  },
+  {
+    "id": 36,
+    "word": "notice",
+    "phonetic": "[ˈnotɪs]",
+    "pos": "v./n.",
+    "meaning": "注意到；公告",
+    "grammar": "【感官動詞】後可接 O + V 或 O + V-ing。",
+    "examples": [
+      { "en": "I didn't notice that he had changed his hair style.", "zh": "我沒注意到他換了新髮型。" },
+      { "en": "There is an important notice on the wall.", "zh": "牆上有一個重要的公告。" }
+    ]
+  },
+  {
+    "id": 37,
+    "word": "offer",
+    "phonetic": "[ˈɔfɚ]",
+    "pos": "v.",
+    "meaning": "提供",
+    "grammar": "【雙重受詞】offer someone something = offer something to someone。",
+    "examples": [
+      { "en": "He offered to help me carry the heavy box.", "zh": "他主動提出要幫我提這個重箱子。" },
+      { "en": "The hotel offers free breakfast every morning.", "zh": "這間飯店每天早上提供免費早餐。" }
+    ]
+  },
+  {
+    "id": 38,
+    "word": "prepare",
+    "phonetic": "[prɪˈpɛr]",
+    "pos": "v.",
+    "meaning": "準備",
+    "grammar": "【常見搭配】prepare for the test (為考試做準備)。",
+    "examples": [
+      { "en": "Students are preparing for the upcoming exam.", "zh": "學生們正在為即將到來的考試做準備。" },
+      { "en": "Mom is preparing a delicious lunch in the kitchen.", "zh": "媽媽正在廚房準備美味的午餐。" }
+    ]
+  },
+  {
+    "id": 39,
+    "word": "promise",
+    "phonetic": "[ˈprɑmɪs]",
+    "pos": "v./n.",
+    "meaning": "承諾；諾言",
+    "grammar": "【常見搭配】make a promise (許下諾言)；keep a promise (遵守諾言)。",
+    "examples": [
+      { "en": "He promised to call me as soon as he arrived.", "zh": "他承諾一到達就會打電話給我。" },
+      { "en": "Always keep your promise if you make one.", "zh": "許下諾言後就一定要遵守。" }
+    ]
+  },
+  {
+    "id": 40,
+    "word": "protect",
+    "phonetic": "[prəˈtɛkt]",
+    "pos": "v.",
+    "meaning": "保護",
+    "grammar": "【句型解析】protect someone from harm (保護某人不受傷害)。",
+    "examples": [
+      { "en": "Sunglasses can protect your eyes from the bright sun.", "zh": "太陽眼鏡能保護你的眼睛不受強光傷害。" },
+      { "en": "We should take action to protect environment.", "zh": "我們應該採取行動來保護環境。" }
+    ]
+  },
+  {
+    "id": 41,
+    "word": "receive",
+    "phonetic": "[rɪˈsiv]",
+    "pos": "v.",
+    "meaning": "收到",
+    "grammar": "【拼寫注意】ei 拼寫順序 (r-e-c-e-i-v-e)。",
+    "examples": [
+      { "en": "I received a birthday gift from my best friend.", "zh": "我收到了好朋友送的生日禮物。" },
+      { "en": "She received an email from her teacher today.", "zh": "她今天收到了老師寄來的電子郵件。" }
+    ]
+  },
+  {
+    "id": 42,
+    "word": "remember",
+    "phonetic": "[rɪˈmɛmbɚ]",
+    "pos": "v.",
+    "meaning": "記得",
+    "grammar": "【文法解析】remember to V (記得要做)；remember V-ing (記得做過)。",
+    "examples": [
+      { "en": "Please remember to turn off the light before leaving.", "zh": "離開前請記得關燈。" },
+      { "en": "I remember meeting him at the party last year.", "zh": "我記得去年在派對上看過他。" }
+    ]
+  },
+  {
+    "id": 43,
+    "word": "repeat",
+    "phonetic": "[rɪˈpit]",
+    "pos": "v.",
+    "meaning": "重複",
+    "grammar": "【常見用語】Repeat after me (跟我念一次)。",
+    "examples": [
+      { "en": "Could you please repeat your question again?", "zh": "能否請你再重複一次你的問題？" },
+      { "en": "The parrot can repeat the words humans say.", "zh": "這隻鸚鵡會重複人類說的話。" }
+    ]
+  },
+  {
+    "id": 44,
+    "word": "return",
+    "phonetic": "[rɪˈtɝn]",
+    "pos": "v.",
+    "meaning": "歸還；返回",
+    "grammar": "【用法解析】return = come back。歸還時搭配 return something to someone。",
+    "examples": [
+      { "en": "He returned home late after working overtime.", "zh": "加班後他很晚才回到家。" },
+      { "en": "Don't forget to return the library books on time.", "zh": "別忘了按時歸還圖書館的書。" }
+    ]
+  },
+  {
+    "id": 45,
+    "word": "search",
+    "phonetic": "[sɝtʃ]",
+    "pos": "v.",
+    "meaning": "搜尋",
+    "grammar": "【常見搭配】search for something (搜尋某物)。",
+    "examples": [
+      { "en": "I searched online for the recipe for chocolate cake.", "zh": "我在網路上搜尋巧克力蛋糕的食譜。" },
+      { "en": "The police are searching for the lost child.", "zh": "警方正在搜尋失蹤的孩子。" }
+    ]
+  },
+  {
+    "id": 46,
+    "word": "active",
+    "phonetic": "[ˈæktɪv]",
+    "pos": "adj.",
+    "meaning": "活躍的；積極的",
+    "grammar": "【形容詞用法】be active in (在…方面很活躍/積極)。",
+    "examples": [
+      { "en": "My grandfather is still very active at eighty.", "zh": "我爺爺八十歲了依然非常活力充沛。" },
+      { "en": "She takes an active part in school activities.", "zh": "她積極參與學校的各項活動。" }
+    ]
+  },
+  {
+    "id": 47,
+    "word": "beautiful",
+    "phonetic": "[ˈbjutəfəl]",
+    "pos": "adj.",
+    "meaning": "美麗的",
+    "grammar": "【最高級變化】more beautiful / most beautiful。",
+    "examples": [
+      { "en": "We watched a beautiful sunset at the beach.", "zh": "我們在海灘觀賞了美麗的日落。" },
+      { "en": "She sang a beautiful song for the audience.", "zh": "她為觀眾獻唱了一首優美的歌曲。" }
+    ]
+  },
+  {
+    "id": 48,
+    "word": "bright",
+    "phonetic": "[braɪt]",
+    "pos": "adj.",
+    "meaning": "明亮的；聰明的",
+    "grammar": "【比較級】brighter / brightest。",
+    "examples": [
+      { "en": "The sun is very bright today; wear sunglasses.", "zh": "今天陽光很強，戴上太陽眼鏡吧。" },
+      { "en": "He is a bright student who learns quickly.", "zh": "他是一位學習敏捷的聰明學生。" }
+    ]
+  },
+  {
+    "id": 49,
+    "word": "careful",
+    "phonetic": "[ˈkɛrfəl]",
+    "pos": "adj.",
+    "meaning": "小心謹慎的",
+    "grammar": "【常見片語】be careful with (對…小心)；be careful of (提防…)。",
+    "examples": [
+      { "en": "Be careful when you cross the busy street.", "zh": "過繁忙的馬路時要小心。" },
+      { "en": "He is always careful with his personal work.", "zh": "他對自己的工作總是十分謹慎。" }
+    ]
+  },
+  {
+    "id": 50,
+    "word": "clever",
+    "phonetic": "[ˈklɛvɚ]",
+    "pos": "adj.",
+    "meaning": "聰明的",
+    "grammar": "【同義字】smart, intelligent。",
+    "examples": [
+      { "en": "The clever dog solved the puzzle easily.", "zh": "那隻聰明的狗輕鬆解開了難題。" },
+      { "en": "It was a clever idea to save energy.", "zh": "那是一個節約能源的好聰明點子。" }
+    ]
+  },
+  {
+    "id": 51,
+    "word": "dangerous",
+    "phonetic": "[ˈdendʒərəs]",
+    "pos": "adj.",
+    "meaning": "危險的",
+    "grammar": "【名詞延伸】danger (危險)。反義字為 safe。",
+    "examples": [
+      { "en": "It is dangerous to play with fire.", "zh": "玩火是相當危險的。" },
+      { "en": "Swimming in this deep river can be dangerous.", "zh": "在這條深河裡游泳可能很危險。" }
+    ]
+  },
+  {
+    "id": 52,
+    "word": "famous",
+    "phonetic": "[ˈfeməs]",
+    "pos": "adj.",
+    "meaning": "著名的",
+    "grammar": "【常見片語】be famous for (以…特色聞名)；be famous as (以…身分聞名)。",
+    "examples": [
+      { "en": "Taiwan is famous for its delicious night market food.", "zh": "台灣以美味的夜市小吃聞名。" },
+      { "en": "He became a famous writer in his thirties.", "zh": "他在三十多歲時成為著名作家。" }
+    ]
+  },
+  {
+    "id": 53,
+    "word": "important",
+    "phonetic": "[ɪmˈpɔrtnt]",
+    "pos": "adj.",
+    "meaning": "重要的",
+    "grammar": "【句型解析】It is important to V (做某事很重要)。",
+    "examples": [
+      { "en": "It is important to get enough sleep every day.", "zh": "每天保持充足睡眠是很重要的。" },
+      { "en": "Water is essential and important for all living things.", "zh": "水對所有生物來說都是不可或缺且重要的。" }
+    ]
+  },
+  {
+    "id": 54,
+    "word": "popular",
+    "phonetic": "[ˈpɑpjəlɚ]",
+    "pos": "adj.",
+    "meaning": "受歡迎的",
+    "grammar": "【常見搭配】be popular with / among (受…歡迎)。",
+    "examples": [
+      { "en": "This Korean pop singer is popular among teenagers.", "zh": "這位韓國流行歌手在青少年間非常受歡迎。" },
+      { "en": "Basketball is a very popular sport in Taiwan.", "zh": "籃球在台灣是一項非常熱門的運動。" }
+    ]
+  },
+  {
+    "id": 55,
+    "word": "useful",
+    "phonetic": "[ˈjusfəl]",
+    "pos": "adj.",
+    "meaning": "有用的；實用的",
+    "grammar": "【冠詞注意】字首為輔音音素 /j/，前面冠詞用 a (a useful tool)。",
+    "examples": [
+      { "en": "The dictionary is a useful tool for language learning.", "zh": "字典是語言學習非常有用的工具。" },
+      { "en": "He gave me some useful advice on choosing a career.", "zh": "他給了我一些關於選擇職涯的實用建議。" }
+    ]
+  }
+]

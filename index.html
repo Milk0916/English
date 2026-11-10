@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WordMaster - 國中英語單字英雄榜</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- 📱 漢堡按鈕 -->
+  <button class="mobile-menu-btn" id="menuToggleBtn" onclick="toggleMobileMenu()">☰</button>
+
+  <!-- 📱 遮罩 -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileMenu()"></div>
+
+  <!-- 📌 側邊選單 -->
+  <div class="sidebar" id="appSidebar">
+    <div class="sidebar-brand">WORDMASTER</div>
+    <div class="nav-item active" onclick="switchTab('words')">📚 單字與語法</div>
+    <div class="nav-item" onclick="switchTab('games')">🎮 遊戲競技場</div>
+    <div class="nav-item" onclick="switchTab('leaderboard')">🏆 英雄排行榜</div>
+    <div class="nav-item" onclick="switchTab('notebook')">📕 錯題本解析</div>
+    <div class="nav-item" onclick="switchTab('guide')">📖 遊戲指南</div>
+    <div class="nav-item" onclick="switchTab('profile')">👤 個人檔案</div>
+    <div class="nav-item" onclick="switchTab('shop')">🛍️ 道具商城</div>
+  </div>
+
+  <!-- 📌 主區域 -->
+  <div class="main-wrapper">
+    <div class="sticky-header">
+      <div class="user-bar">
+        <!-- 左側：頭像與稱號/暱稱 -->
+        <div class="user-profile-summary">
+          <div class="avatar-img" id="headerAvatar">🐱</div>
+          <div class="user-text-info">
+            <span class="user-title-tag" id="equippedTitle">新手學童</span>
+            <span id="userGreeting" class="user-nickname">同學</span>
+          </div>
+        </div>
+
+        <!-- 右側：簽到與金幣 -->
+        <div class="user-actions-summary">
+          <button class="btn btn-checkin" id="dailyCheckInBtn" onclick="doDailyCheckIn()">📅 簽到 (+50)</button>
+          <div class="coin-badge">🪙 <span id="userCoins">0</span></div>
+        </div>
+      </div>
+
+      <div class="search-box" id="searchBoxContainer">
+        <input type="text" id="searchInput" placeholder="🔍 搜尋單字、KK音標、中文..." onkeyup="handleSearch()">
+      </div>
+    </div>
+
+    <!-- 分頁 1: 單字庫 -->
+    <div class="page-content active" id="tab-words">
+      <div class="section-header">
+        <h2 class="section-title">📚 全功能英語單字庫</h2>
+        <button class="btn btn-audio desktop-only" onclick="printWordList()">🖨️ 列印學習單</button>
+      </div>
+
+      <!-- 🏷️ 分類選單列 -->
+      <div class="category-bar">
+        <button class="cat-btn active" onclick="filterCategory('all', event)">全部單字</button>
+        <button class="cat-btn" onclick="filterCategory('n.', event)">🏷️ 名詞 (n.)</button>
+        <button class="cat-btn" onclick="filterCategory('v.', event)">⚡ 動詞 (v.)</button>
+        <button class="cat-btn" onclick="filterCategory('adj.', event)">✨ 形容詞 (adj.)</button>
+      </div>
+
+      <div class="table-container" id="printableArea">
+        <table>
+          <thead>
+            <tr><th>#</th><th>單字</th><th>KK 音標</th><th>詞性</th><th>中文解釋</th><th>📖 語法觀念</th><th>功能</th></tr>
+          </thead>
+          <tbody id="wordTableBody"></tbody>
+        </table>
+        <div id="loadingStatus" style="text-align:center; padding:15px; color:var(--text-sub);"></div>
+      </div>
+    </div>
+
+    <!-- 分頁 2: 遊戲中心 -->
+    <div class="page-content" id="tab-games">
+      <div class="game-grid">
+        <div class="game-mode-card">
+          <div class="game-icon">⚡</div>
+          <h3>4選1極速PK賽</h3>
+          <p class="game-desc">選出正確中文翻譯！</p>
+          <select id="quizCountSelect" class="count-select">
+            <option value="5">🎯 題數：5 題</option>
+            <option value="10" selected>🎯 題數：10 題</option>
+            <option value="15">🎯 題數：15 題</option>
+          </select>
+          <select id="quizSourceSelect" class="count-select">
+            <option value="all" selected>📚 範圍：全部單字庫</option>
+            <option value="notebook">📕 範圍：專攻錯題本</option>
+          </select>
+          <button class="btn btn-game" style="width:100%; margin-top:5px;" onclick="startQuizGame()">開始挑戰</button>
+        </div>
+
+        <div class="game-mode-card">
+          <div class="game-icon">🌧️</div>
+          <h3>單字瀑布接接樂</h3>
+          <p class="game-desc">接住掉落的英文單字！</p>
+          <select id="fallCountSelect" class="count-select">
+            <option value="5">🎯 題數：5 題</option>
+            <option value="10" selected>🎯 題數：10 題</option>
+          </select>
+          <select id="fallSourceSelect" class="count-select">
+            <option value="all" selected>📚 範圍：全部單字庫</option>
+            <option value="notebook">📕 範圍：專攻錯題本</option>
+          </select>
+          <button class="btn btn-game" style="width:100%; margin-top:5px; background:linear-gradient(135deg,#10b981,#059669);" onclick="startWordFallGame()">開始接單字</button>
+        </div>
+
+        <div class="game-mode-card">
+          <div class="game-icon">🔤</div>
+          <h3>點擊拼字大挑戰</h3>
+          <p class="game-desc">點選字母組合單字！</p>
+          <select id="spellCountSelect" class="count-select">
+            <option value="5">🎯 題數：5 題</option>
+            <option value="10" selected>🎯 題數：10 題</option>
+          </select>
+          <select id="spellSourceSelect" class="count-select">
+            <option value="all" selected>📚 範圍：全部單字庫</option>
+            <option value="notebook">📕 範圍：專攻錯題本</option>
+          </select>
+          <button class="btn btn-game" style="width:100%; margin-top:5px; background:linear-gradient(135deg,#0284c7,#0369a1);" onclick="startSpellingGame()">開始拼字</button>
+        </div>
+
+        <div class="game-mode-card">
+          <div class="game-icon">🧩</div>
+          <h3>重組句子大挑戰</h3>
+          <p class="game-desc">將散開單字排成句子！</p>
+          <select id="sentenceCountSelect" class="count-select">
+            <option value="3">🎯 題數：3 題</option>
+            <option value="5" selected>🎯 題數：5 題</option>
+          </select>
+          <button class="btn btn-game" style="width:100%; margin-top:35px; background:linear-gradient(135deg,#a855f7,#7e22ce);" onclick="startSentenceGame()">句子重組</button>
+        </div>
+
+        <div class="game-mode-card" style="border-color:rgba(239, 68, 68, 0.4);">
+          <div class="game-icon">❤️</div>
+          <h3>HP 3心生存模式</h3>
+          <p class="game-desc">答錯扣心！無限闖關！</p>
+          <select id="survivalSourceSelect" class="count-select" style="margin-top:30px;">
+            <option value="all" selected>📚 範圍：全部單字庫</option>
+            <option value="notebook">📕 範圍：專攻錯題本</option>
+          </select>
+          <button class="btn btn-game" style="width:100%; margin-top:5px; background:linear-gradient(135deg,#ef4444,#dc2626);" onclick="startSurvivalGame()">無盡生存</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 分頁 3: 🏆 英雄排行榜 -->
+    <div class="page-content" id="tab-leaderboard">
+      <div class="section-header">
+        <h2 class="section-title">🏆 全球單字英雄榜</h2>
+        <button class="btn btn-ai" onclick="renderLeaderboardUI()">🔄 刷新</button>
+      </div>
+      <p style="color:var(--text-sub); font-size:0.85rem; margin-bottom:15px;">挑戰遊戲刷新最高分，搶奪排行榜榮譽寶座！</p>
+      
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr><th>名次</th><th>玩家</th><th>佩戴稱號</th><th>最高得分</th><th>榮譽</th></tr>
+          </thead>
+          <tbody id="leaderboardTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 分頁 4: 📕 錯題本 -->
+    <div class="page-content" id="tab-notebook">
+      <div class="section-header">
+        <h2 class="section-title">📕 專屬錯題本</h2>
+      </div>
+      <p style="color:var(--text-sub); font-size:0.85rem; margin-bottom:15px;">自動收集寫錯的單字，強化弱點記憶！</p>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr><th>單字</th><th>中文翻譯</th><th>答錯次數</th><th>操作</th></tr>
+          </thead>
+          <tbody id="notebookTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 分頁 5: 📖 遊戲指南 -->
+    <div class="page-content" id="tab-guide">
+      <h2 style="margin-top:0; color:white;">📖 WordMaster 遊戲指南</h2>
+      <div class="guide-grid">
+        <div class="guide-card">
+          <h3>🎮 多樣遊戲模式</h3>
+          <ul class="guide-list">
+            <li><span class="highlight-text">⚡ 4選1極速PK賽</span>：選出正確翻譯。</li>
+            <li><span class="highlight-text">🌧️ 單字瀑布接接樂</span>：觸底前接住單字！</li>
+            <li><span class="highlight-text">🔤 點擊拼字大挑戰</span>：組合字母拼出單字。</li>
+            <li><span class="highlight-text">🧩 句子重組大挑戰</span>：按正確語順組句。</li>
+            <li><span class="highlight-text">❤️ 3心生存模式</span>：答錯扣心，挑戰極限！</li>
+          </ul>
+        </div>
+
+        <div class="guide-card">
+          <h3>🎯 得分與金幣機制</h3>
+          <ul class="guide-list">
+            <li><span class="highlight-text">金幣換算</span>：得分以 <span class="highlight-text">10 : 1</span> 換算金幣。</li>
+            <li><span class="highlight-text">每日簽到</span>：每天簽到領取 <span class="highlight-text">50 金幣</span>！</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 分頁 6: 👤 個人檔案 -->
+    <div class="page-content" id="tab-profile">
+      <div class="profile-card">
+        <div class="profile-header">
+          <div style="display:flex; align-items:center; gap:15px;">
+            <div class="avatar-img" id="profileAvatar" style="width:60px; height:60px; font-size:2rem;">🐱</div>
+            <div>
+              <h3 style="margin:0; color:white;" id="profileName">玩家暱稱</h3>
+              <p style="margin:3px 0 0 0; color:var(--text-sub); font-size:0.85rem;" id="profileTitleTag">稱號：新手學童</p>
+            </div>
+          </div>
+          <button class="btn btn-ai" onclick="openEditNameModal()">✏️ 編輯</button>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box"><div style="font-size:0.8rem; color:var(--text-sub);">連續登入</div><div class="stat-number" style="color:#fbbf24;" id="statStreak">1 天</div></div>
+          <div class="stat-box"><div style="font-size:0.8rem; color:var(--text-sub);">總答題數</div><div class="stat-number" id="statTotalPlayed">0</div></div>
+          <div class="stat-box"><div style="font-size:0.8rem; color:var(--text-sub);">歷史最高分</div><div class="stat-number" style="color:#10b981;" id="statHighScore">0</div></div>
+        </div>
+
+        <h3 style="color:white; margin:20px 0 15px 0; font-size:1.1rem;">🎖️ 成就勳章牆</h3>
+        <div class="badge-grid" id="badgeGrid"></div>
+
+        <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin:20px 0;">
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="btn btn-audio" onclick="exportData()">📥 備份紀錄</button>
+          <button class="btn btn-ai" onclick="document.getElementById('importFileInput').click()">📤 還原紀錄</button>
+          <input type="file" id="importFileInput" style="display:none;" onchange="importData(event)">
+        </div>
+      </div>
+    </div>
+
+    <!-- 分頁 7: 🛍️ 道具商城 -->
+    <div class="page-content" id="tab-shop">
+      <h2 style="color:white; margin-top:0;">🛍️ 道具商城</h2>
+      
+      <div class="shop-section-title">🧪 功能道具</div>
+      <div class="shop-grid">
+        <div class="shop-item-card">
+          <div style="font-size:1.8rem; margin-bottom:5px;">💡</div>
+          <div class="shop-item-title">二選一排除卡</div>
+          <div class="shop-item-desc">排除 2 個錯誤選項</div>
+          <div class="shop-item-price">擁有：<span id="itemCount5050">0</span></div>
+          <button class="btn btn-game" style="width:100%; justify-content:center;" onclick="buyPowerUp('p_5050', 50)">🪙 50 購買</button>
+        </div>
+        <div class="shop-item-card">
+          <div style="font-size:1.8rem; margin-bottom:5px;">⏰</div>
+          <div class="shop-item-title">凍結沙漏</div>
+          <div class="shop-item-desc">單字瀑布暫停 3 秒</div>
+          <div class="shop-item-price">擁有：<span id="itemCountFreeze">0</span></div>
+          <button class="btn btn-game" style="width:100%; justify-content:center;" onclick="buyPowerUp('p_freeze', 80)">🪙 80 購買</button>
+        </div>
+        <div class="shop-item-card">
+          <div style="font-size:1.8rem; margin-bottom:5px;">❤️</div>
+          <div class="shop-item-title">HP 補血藥水</div>
+          <div class="shop-item-desc">生存模式恢復 1 顆心</div>
+          <div class="shop-item-price">擁有：<span id="itemCountHeal">0</span></div>
+          <button class="btn btn-game" style="width:100%; justify-content:center;" onclick="buyPowerUp('p_heal', 100)">🪙 100 購買</button>
+        </div>
+      </div>
+
+      <div class="shop-section-title">🏷️ 炫彩稱號</div>
+      <div class="shop-grid" id="shopTitleGrid"></div>
+
+      <div class="shop-section-title">✨ 卡片光輝外框</div>
+      <div class="shop-grid" id="shopFrameGrid"></div>
+    </div>
+
+  </div>
+
+  <!-- 🎁 通用成功彈窗 -->
+  <div class="modal-overlay" id="successModal" style="z-index:300;">
+    <div class="modal-card" style="text-align: center; max-width:360px; padding:25px 15px;">
+      <div style="font-size:3rem; margin-bottom:8px;" id="successModalIcon">🎉</div>
+      <h3 style="color:white; margin:0 0 8px 0; font-size:1.2rem;" id="successModalTitle">完成！</h3>
+      <p style="color:var(--text-sub); font-size:0.85rem; margin-bottom:15px;" id="successModalDesc">成功獲得項目！</p>
+      <button class="btn btn-game" style="width:80%; justify-content:center; padding:8px;" onclick="closeModal('successModal')">太棒了！</button>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="nicknameModal">
+    <div class="modal-card" style="text-align: center;">
+      <h3 style="color:white; margin-top:0;">👤 玩家個人設定</h3>
+      <div style="margin-bottom:15px;">
+        <div style="display:flex; justify-content:center; gap:10px; margin-bottom:12px;">
+          <span style="font-size:1.8rem; cursor:pointer;" onclick="selectEmojiAvatar('🐱')">🐱</span>
+          <span style="font-size:1.8rem; cursor:pointer;" onclick="selectEmojiAvatar('🐶')">🐶</span>
+          <span style="font-size:1.8rem; cursor:pointer;" onclick="selectEmojiAvatar('🦊')">🦊</span>
+          <span style="font-size:1.8rem; cursor:pointer;" onclick="selectEmojiAvatar('🤖')">🤖</span>
+          <span style="font-size:1.8rem; cursor:pointer;" onclick="selectEmojiAvatar('👑')">👑</span>
+        </div>
+        <input type="file" id="avatarFileInput" accept="image/*" style="font-size:0.8rem; color:var(--text-sub);">
+      </div>
+      <input type="text" id="nicknameInput" placeholder="輸入暱稱..." style="padding:10px; width:80%; margin-bottom:15px; text-align:center; background:#0f172a; border:1px solid rgba(255,255,255,0.2); border-radius:8px; color:white;">
+      <button class="btn btn-game" style="padding:8px 16px; width:80%; justify-content:center;" onclick="saveNickname()">儲存變更 🚀</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="exampleModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalWordTitle" style="color:var(--accent-blue); margin:0;">🤖 AI 例句</h3>
+        <button class="close-btn" onclick="closeModal('exampleModal')">✕</button>
+      </div>
+      <p id="modalExampleEn" style="color:#38bdf8; font-weight:bold;"></p>
+      <p id="modalExampleZh" style="color:var(--text-sub);"></p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="quizModal">
+    <div class="modal-card" id="quizCard">
+      <div class="modal-header">
+        <h3 id="quizModalTitle" style="color:white; margin:0;">⚡ 4選1挑戰</h3>
+        <button class="close-btn" onclick="closeModal('quizModal')">✕</button>
+      </div>
+      <div id="quizPlayingScreen">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+          <div>得分：<span id="scoreText" style="color:#fbbf24; font-weight:bold;">0</span></div>
+          <div id="hpBar" style="display:none; font-size:1.1rem;">❤️❤️❤️</div>
+        </div>
+        <div style="display:flex; gap:8px; margin-bottom:12px;">
+          <button class="btn btn-ai" onclick="usePowerUp5050()">💡 排除 (<span id="quiz5050Count">0</span>)</button>
+          <button class="btn btn-audio" id="healBtn" style="display:none;" onclick="usePowerUpHeal()">❤️ 補血 (<span id="quizHealCount">0</span>)</button>
+        </div>
+        <div style="font-size:1.8rem; font-weight:900; text-align:center; color:#38bdf8; margin:12px 0;" id="qWord">Word</div>
+        <div id="optionsGrid" style="display:grid; grid-template-columns:1fr 1fr; gap:8px;"></div>
+      </div>
+      <div id="quizResultScreen" style="display:none; text-align:center;">
+        <h2 style="color:white;">🎉 挑戰完成！</h2>
+        <div style="font-size:2.2rem; font-weight:900; color:#38bdf8;" id="finalScore">0</div>
+        <button class="btn btn-game" style="margin-top:12px;" onclick="closeModal('quizModal')">確定離場</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="fallModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 style="color:white; margin:0;">🌧️ 單字瀑布接接樂</h3>
+        <button class="close-btn" onclick="clearInterval(fallTimer); closeModal('fallModal');">✕</button>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:1rem; color:#fbbf24; font-weight:bold;" id="fallTargetMeaning">目標：中文</div>
+        <button class="btn btn-ai" style="margin-top:6px;" onclick="usePowerUpFreeze()">⏰ 凍結 (<span id="fallFreezeCount">0</span>)</button>
+        <div class="fall-container" id="fallArea"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="spellingModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 style="color:white; margin:0;">🔤 點擊拼字挑戰</h3>
+        <button class="close-btn" onclick="closeModal('spellingModal')">✕</button>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:1.1rem; color:#38bdf8; font-weight:bold;" id="spellMeaning">中文解釋</div>
+        <div class="spelling-slots" id="spellingSlots"></div>
+        <div class="letter-pool" id="letterPool"></div>
+        <button class="btn btn-game" onclick="checkSpelling()">送出答案 ↵</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="sentenceModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 style="color:white; margin:0;">🧩 句子重組大挑戰</h3>
+        <button class="close-btn" onclick="closeModal('sentenceModal')">✕</button>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:1rem; color:#fbbf24; font-weight:bold;" id="sentenceMeaning">中文句意</div>
+        <div class="sentence-target-area" id="sentenceTargetArea"></div>
+        <div class="letter-pool" id="sentenceWordPool"></div>
+        <button class="btn btn-game" onclick="checkSentenceAnswer()">確認句子 ↵</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
